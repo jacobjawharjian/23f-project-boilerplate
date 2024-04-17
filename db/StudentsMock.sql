@@ -1,0 +1,100 @@
+CREATE TABLE IF NOT EXISTS Students (
+    NUID INTEGER,
+    FirstName TEXT,
+    LastName TEXT,
+    Email varchar(99),
+    MealPlan INTEGER,
+    SwipesLeft INTEGER,
+    HuskyDollarBalance INTEGER,
+    PRIMARY KEY (NUID)
+);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0002795760', 'Bambie', 'Stoyell', 'bstoyell0@alibaba.com', 3, 617, 99);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7546598486', 'Trace', 'Collymore', 'tcollymore1@dell.com', 3, 63, 255);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1873750102', 'Aloisia', 'Ost', 'aost2@goo.ne.jp', 1, 118, 429);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('4631439505', 'Tyler', 'Brockwell', 'tbrockwell3@cnn.com', 5, 561, 132);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1337407585', 'Fredi', 'Clerc', 'fclerc4@angelfire.com', 2, 468, 367);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9865218550', 'Cassey', 'Coviello', 'ccoviello5@mozilla.org', 3, 877, 368);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8691123443', 'Hilton', 'Tarry', 'htarry6@flavors.me', 3, 21, 143);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1120542529', 'Elke', 'Heel', 'eheel7@npr.org', 4, 611, 712);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7029206207', 'Susy', 'Burnet', 'sburnet8@abc.net.au', 4, 485, 572);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8108620317', 'Paquito', 'Frank', 'pfrank9@baidu.com', 4, 261, 817);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7000834463', 'Francisco', 'Filasov', 'ffilasova@eepurl.com', 2, 545, 718);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5785652560', 'Moises', 'Van Driel', 'mvandrielb@odnoklassniki.ru', 1, 707, 921);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1159307229', 'Johnathan', 'Bitten', 'jbittenc@hexun.com', 1, 837, 268);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('4255617414', 'Bearnard', 'Glencrosche', 'bglencrosched@51.la', 1, 874, 344);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9073018528', 'Clay', 'Perocci', 'cperoccie@webeden.co.uk', 5, 447, 211);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3939219614', 'Letta', 'Towll', 'ltowllf@illinois.edu', 1, 627, 816);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('4496584905', 'Cass', 'Hackford', 'chackfordg@elegantthemes.com', 5, 295, 868);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7222528520', 'Penrod', 'Brehault', 'pbrehaulth@squarespace.com', 3, 519, 261);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3704859605', 'Audrey', 'Espinas', 'aespinasi@webnode.com', 4, 775, 255);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3150718546', 'Florella', 'Pinwell', 'fpinwellj@dyndns.org', 5, 787, 951);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1597935611', 'Chelsey', 'Swash', 'cswashk@altervista.org', 1, 472, 694);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2061924514', 'Deloris', 'Hilliam', 'dhilliaml@gov.uk', 5, 626, 676);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9858804717', 'Lyssa', 'Bevan', 'lbevanm@goo.gl', 2, 502, 405);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2993710621', 'Jaquelin', 'Courtin', 'jcourtinn@sogou.com', 2, 205, 202);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0604911556', 'Sandra', 'Dongall', 'sdongallo@wufoo.com', 1, 656, 996);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9725680596', 'Ardisj', 'Jerdan', 'ajerdanp@census.gov', 2, 618, 264);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3841295797', 'Catie', 'Thal', 'cthalq@bloomberg.com', 1, 261, 911);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3267322545', 'Eudora', 'Hurl', 'ehurlr@squidoo.com', 5, 220, 482);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8617425466', 'Tess', 'Todaro', 'ttodaros@liveinternet.ru', 2, 959, 632);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7000779209', 'Austina', 'Abramamovh', 'aabramamovht@example.com', 4, 483, 703);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9364469062', 'Dukey', 'Kemble', 'dkembleu@behance.net', 5, 408, 973);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3766571745', 'Lanie', 'Moreinu', 'lmoreinuv@xrea.com', 2, 248, 926);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9991012427', 'Ada', 'Scannell', 'ascannellw@hhs.gov', 2, 46, 450);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8345207340', 'Mel', 'Piola', 'mpiolax@google.co.jp', 4, 212, 482);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7373904491', 'Ali', 'Colebrook', 'acolebrooky@artisteer.com', 4, 102, 910);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7947219133', 'Ofella', 'Easterbrook', 'oeasterbrookz@istockphoto.com', 4, 884, 969);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0694130869', 'Ulla', 'Sudran', 'usudran10@hostgator.com', 2, 20, 137);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5359710233', 'Clerkclaude', 'Dunsleve', 'cdunsleve11@narod.ru', 4, 85, 647);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6003382031', 'Prescott', 'Carpenter', 'pcarpenter12@samsung.com', 5, 111, 378);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3728920851', 'Haleigh', 'Musson', 'hmusson13@woothemes.com', 5, 789, 227);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8998727366', 'Casar', 'Lesor', 'clesor14@barnesandnoble.com', 2, 478, 330);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0522934625', 'Alfy', 'Hyett', 'ahyett15@answers.com', 3, 790, 764);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2374156931', 'Ogdan', 'Oehm', 'ooehm16@nydailynews.com', 5, 438, 723);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9900853016', 'Fawn', 'Crosse', 'fcrosse17@ameblo.jp', 5, 581, 800);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('4159969305', 'Kariotta', 'Casburn', 'kcasburn18@github.com', 5, 269, 0);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0390200123', 'Timmy', 'Wildt', 'twildt19@squarespace.com', 2, 811, 439);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0696257645', 'Henrie', 'Beaument', 'hbeaument1a@upenn.edu', 3, 970, 123);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3616549302', 'Vivyanne', 'Cromar', 'vcromar1b@telegraph.co.uk', 1, 780, 611);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6442043924', 'Gonzalo', 'Loveitt', 'gloveitt1c@buzzfeed.com', 2, 746, 998);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7898799445', 'Yurik', 'Chad', 'ychad1d@wordpress.org', 5, 714, 263);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9472246273', 'Tilly', 'Lancashire', 'tlancashire1e@bing.com', 4, 156, 706);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5608485629', 'Lonnie', 'Hussy', 'lhussy1f@spotify.com', 2, 212, 517);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5609252431', 'Neron', 'Trayling', 'ntrayling1g@wordpress.org', 1, 697, 477);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('1789828899', 'Emelda', 'Parriss', 'eparriss1h@zimbio.com', 3, 771, 919);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9451436243', 'Vanna', 'Pottinger', 'vpottinger1i@prnewswire.com', 1, 786, 711);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7225497723', 'Gae', 'Surgen', 'gsurgen1j@ocn.ne.jp', 3, 881, 841);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8148138249', 'Mirna', 'Bilston', 'mbilston1k@europa.eu', 3, 188, 764);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8701718290', 'Davidson', 'Pittman', 'dpittman1l@state.gov', 2, 939, 558);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6215402710', 'Adele', 'Melbury', 'amelbury1m@reverbnation.com', 4, 901, 819);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2991413875', 'Alvan', 'Corroyer', 'acorroyer1n@hao123.com', 1, 92, 936);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5176420309', 'Freida', 'Degg', 'fdegg1o@shutterfly.com', 1, 75, 130);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9129296757', 'Melisande', 'Vallantine', 'mvallantine1p@globo.com', 5, 480, 979);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2038552193', 'Arni', 'O''Brogan', 'aobrogan1q@rakuten.co.jp', 1, 75, 185);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('4904072057', 'Almira', 'Stone Fewings', 'astonefewings1r@sciencedirect.com', 4, 504, 887);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7991732592', 'Selby', 'Treadwell', 'streadwell1s@odnoklassniki.ru', 2, 887, 28);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5547179027', 'Cos', 'Scaife', 'cscaife1t@economist.com', 1, 730, 361);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8266279659', 'Gracia', 'Wakeman', 'gwakeman1u@accuweather.com', 2, 904, 37);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3171831449', 'Hazel', 'Camamill', 'hcamamill1v@studiopress.com', 5, 792, 412);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3711772714', 'Janey', 'Richings', 'jrichings1w@shop-pro.jp', 2, 811, 453);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0929616464', 'Daphne', 'Rowe', 'drowe1x@whitehouse.gov', 3, 681, 669);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0312789084', 'Meredith', 'Rosenqvist', 'mrosenqvist1y@nsw.gov.au', 2, 9, 32);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('9882477828', 'Falkner', 'Caroli', 'fcaroli1z@lulu.com', 2, 702, 470);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8498965616', 'Shoshanna', 'Flancinbaum', 'sflancinbaum20@mit.edu', 3, 313, 489);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5808722152', 'Alfonse', 'Rutherford', 'arutherford21@github.com', 5, 819, 48);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6279020827', 'Dodi', 'Tapsfield', 'dtapsfield22@blogger.com', 3, 98, 812);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2534555669', 'Edd', 'Thewless', 'ethewless23@hibu.com', 2, 126, 860);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6486586397', 'Morganica', 'Rundle', 'mrundle24@dailymail.co.uk', 5, 392, 80);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3206464056', 'Marci', 'Lardeur', 'mlardeur25@buzzfeed.com', 4, 398, 444);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5832702980', 'Heather', 'Fitchell', 'hfitchell26@disqus.com', 2, 378, 348);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5488436278', 'Kenneth', 'Struys', 'kstruys27@dailymail.co.uk', 2, 342, 396);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('7293468318', 'Lizabeth', 'O'' Connell', 'loconnell28@elegantthemes.com', 1, 904, 309);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('0060370572', 'Mariska', 'Zmitrichenko', 'mzmitrichenko29@geocities.jp', 2, 274, 741);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2589408056', 'Jeffie', 'Branchet', 'jbranchet2a@hud.gov', 5, 391, 321);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('5733188987', 'Byron', 'de Werk', 'bdewerk2b@geocities.com', 1, 659, 793);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8358466137', 'Randie', 'Branigan', 'rbranigan2c@skype.com', 4, 428, 961);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3717475843', 'Burg', 'Bohike', 'bbohike2d@rambler.ru', 4, 844, 749);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('2676462415', 'Eamon', 'Feifer', 'efeifer2e@squarespace.com', 1, 163, 100);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('6495336349', 'Piper', 'Nono', 'pnono2f@twitpic.com', 2, 254, 345);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('8446534045', 'Alvy', 'Stuchberry', 'astuchberry2g@dmoz.org', 3, 304, 54);
+insert into Students (NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance) values ('3702091068', 'Alric', 'Meriguet', 'ameriguet2h@walmart.com', 2, 767, 206);
