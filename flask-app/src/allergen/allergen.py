@@ -2,86 +2,97 @@ from flask import Blueprint, request, jsonify, make_response
 import json
 from src import db
 
-
 Allergens = Blueprint('Allergens', __name__)
 
-# Get all allergens from the DB
-@Allergens.route('/allergens', methods=['GET'])
-def get_allergens():
-    cursor = db.get_db().cursor()
-    cursor.execute('select AllergenID, AllergenType from Allergens')
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
 
-# Get allergen detail for allergen with particular userID
-@Allergens.route('/Allergens/<userID>', methods=['GET'])
-def get_allergen(AllergenID):
-    cursor = db.get_db().cursor()
-    cursor.execute('select * from Allergens where AllergenID = {0}'.format(AllergenID))
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
+# Get all Allergens from the DB
+@Allergens.route('/Allergens', methods=['GET'])
+def get_Allergens():
+   cursor = db.get_db().cursor()
+   cursor.execute('SELECT AllergenID, AllergenType FROM Allergens')
+   row_headers = [x[0] for x in cursor.description]
+   json_data = []
+   theData = cursor.fetchall()
+   for row in theData:
+       json_data.append(dict(zip(row_headers, row)))
+   the_response = make_response(jsonify(json_data))
+   the_response.status_code = 200
+   the_response.mimetype = 'application/json'
+   return the_response
 
-# Update allergens info from AllergenID
-@Allergens.route('/Allergens', methods=['PUT'])
-def update_allergens(): 
-    the_data = request.json
 
-    AllergenID = the_data.get('AllergenID')
-    AllergenType = the_data.get('AllergenType')
-    
-    
-    if AllergenID is None: 
-        return jsonify({'error': 'Missing customer ID'}), 400
-    
-    query = "UPDATE Allergens SET  AllergenType = %s WHERE AllergenID = %s"
-        
-    data = (AllergenType, AllergenID)
-    cursor = db.get_db().cursor()
-    cursor.execute(query, data)
-    db.get_db().commit()
+# Get Allergen details for Allergen with specific AllergenID
+@Allergens.route('/Allergens/<int:AllergenID>', methods=['GET'])
+def get_Allergen(AllergenID):
+   cursor = db.get_db().cursor()
+   cursor.execute('SELECT * FROM Allergens WHERE AllergenID = %s', (AllergenID,))
+   row_headers = [x[0] for x in cursor.description]
+   json_data = []
+   theData = cursor.fetchall()
+   if theData:
+       for row in theData:
+           json_data.append(dict(zip(row_headers, row)))
+       the_response = make_response(jsonify(json_data))
+       the_response.status_code = 200
+       the_response.mimetype = 'application/json'
+   else:
+       the_response = make_response(jsonify({"error": "Allergen not found"}), 404)
+   return the_response
 
-    return 'Success!'
 
-# Add Allergens details for a new Allergen with particular AllergenID
-@Allergens.route('/Allergens/<AllergenID>', methods=['POST'])
-def post_DietaryRestrictions(AllergenID):
-    cursor = db.get_db().cursor()
-    cursor.execute('select * from Allergens where AllergenID = {0}'.format(AllergenID))
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
+# Add new Allergen
+@Allergens.route('/Allergens', methods=['POST'])
+def add_Allergen():
+   the_data = request.json
+   AllergenType = the_data.get('AllergenType')
 
-# Delete Allergen details for Allergens with particular AllergenID
-@Allergens.route('/Allergens/<AllergenID>', methods=['DELETE'])
-def delete_Allergens(AllergenID):
-    cursor = db.get_db().cursor()
-    cursor.execute('select * from Allergens where AllergenID = {0}'.format(AllergenID))
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
+   if not AllergenType:
+       return jsonify({"error": "Missing required data:AllergenType"}), 400
+
+
+   query = '''
+   INSERT INTO Allergens (AllergenType)
+   VALUES (%s)
+   '''
+   params = (AllergenType)
+
+
+   cursor = db.get_db().cursor()
+   cursor.execute(query, params)
+   db.get_db().commit()
+
+
+   return jsonify({"message": "Allergen added successfully"}), 201
+
+
+# Update Allergen information
+@Allergens.route('/Allergens/<int:AllergenID>', methods=['PUT'])
+def update_Allergen(AllergenID):
+   the_data = request.json
+   AllergenType = the_data.get('AllergenType')
+
+   query = '''
+   UPDATE Allergens
+   SET AllergenType = %s
+   WHERE AllergenID = %s
+   '''
+   params = (AllergenType, AllergenID)
+
+
+   cursor = db.get_db().cursor()
+   cursor.execute(query, params)
+   db.get_db().commit()
+
+
+   return jsonify({"message": "Allergen updated successfully"}), 200
+
+
+# Delete a meal
+@Allergens.route('/Allergens/<int:AllergenID>', methods=['DELETE'])
+def delete_Allergen(AllergenID):
+   cursor = db.get_db().cursor()
+   cursor.execute('DELETE FROM Allergens WHERE AllergenID = %s', (AllergenID,))
+   db.get_db().commit()
+
+
+   return jsonify({"message": "Allergen deleted successfully"}), 200
