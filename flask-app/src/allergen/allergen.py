@@ -87,7 +87,7 @@ def update_Allergen(AllergenID):
    return jsonify({"message": "Allergen updated successfully"}), 200
 
 
-# Delete a meal
+# Delete an Allergen
 @Allergens.route('/Allergens/<int:AllergenID>', methods=['DELETE'])
 def delete_Allergen(AllergenID):
    cursor = db.get_db().cursor()
