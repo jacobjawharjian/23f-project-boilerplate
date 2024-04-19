@@ -2,13 +2,14 @@ from flask import Blueprint, request, jsonify, make_response
 import json
 from src import db
 
+
 students = Blueprint('students', __name__)
 
 # Get all students from the DB
 @students.route('/students', methods=['GET'])
 def get_students():
     cursor = db.get_db().cursor()
-    cursor.execute('SELECT NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance FROM Students')  # Corrected table name
+    cursor.execute('SELECT NUID, FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance')
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -23,7 +24,7 @@ def get_students():
 @students.route('/students/<int:NUID>', methods=['GET'])
 def get_student(NUID):
    cursor = db.get_db().cursor()
-   cursor.execute('SELECT * FROM Students WHERE NUID = %s', (NUID,))  # Corrected table name
+   cursor.execute('SELECT * FROM students WHERE NUID = %s', (NUID,))
    row_headers = [x[0] for x in cursor.description]
    json_data = []
    theData = cursor.fetchall()
@@ -37,23 +38,18 @@ def get_student(NUID):
        the_response = make_response(jsonify({"error": "Student not found"}), 404)
    return the_response
 
-# Update student information
+
+
+    # Update a students number of remaining swipes
 @students.route('/students/<int:NUID>', methods=['PUT'])
-def update_students(NUID):
-   the_data = request.json
-   FirstName = the_data.get('FirstName')
-   LastName = the_data.get('LastName')
-   Email = the_data.get('Email')
-   MealPlan = the_data.get('MealPlan')
-   SwipesLeft = the_data.get('SwipesLeft')
-   HuskyDollarBalance = the_data.get('HuskyDollarBalance')
+def update_students(studentID, newSwipes):
 
    query = '''
-   UPDATE Students
-   SET FirstName = %s, LastName = %s, Email = %s, MealPlan = %s, SwipesLeft = %s, HuskyDollarBalance = %s
-   WHERE NUID = %s
+   UPDATE students
+   SET SwipesLeft = newSwipes
+   WHERE NUID = studentID
    '''
-   params = (FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance, NUID)
+   params = (studentID, newSwipes)
 
    cursor = db.get_db().cursor()
    cursor.execute(query, params)
@@ -61,37 +57,32 @@ def update_students(NUID):
 
    return jsonify({"message": "Student updated successfully"}), 200
 
-# Add new student
+    # Add new student
 @students.route('/students', methods=['POST'])
-def add_students():
-   the_data = request.json
-   FirstName = the_data.get('FirstName')
-   LastName = the_data.get('LastName')
-   Email = the_data.get('Email')
-   MealPlan = the_data.get('MealPlan')
-   SwipesLeft = the_data.get('SwipesLeft')
-   HuskyDollarBalance = the_data.get('HuskyDollarBalance')
-
-   if not FirstName or not LastName:
-       return jsonify({"error": "Missing required data: FirstName or LastName"}), 400
+def add_students(id, first, last, email, plan, swipes, balance):
 
    query = '''
-   INSERT INTO Students (FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance)
-   VALUES (%s, %s, %s, %s, %s, %s)
+   INSERT into students
+   values(id, first, last, email, plan, swipes, balance)
    '''
-   params = (FirstName, LastName, Email, MealPlan, SwipesLeft, HuskyDollarBalance)
+   params = (id, first, last, email, plan, swipes, balance)
 
    cursor = db.get_db().cursor()
    cursor.execute(query, params)
    db.get_db().commit()
 
-   return jsonify({"message": "Student added successfully"}), 201
+   return jsonify({"message": "Student updated successfully"}), 200
 
-# Delete a Student
+
+    # Delete a Student
 @students.route('/students/<int:NUID>', methods=['DELETE'])
 def delete_student(NUID):
    cursor = db.get_db().cursor()
-   cursor.execute('DELETE FROM Students WHERE NUID = %s', (NUID,))  # Corrected table name
+   cursor.execute('DELETE FROM students WHERE NUID = %s', (NUID,))
    db.get_db().commit()
 
+
    return jsonify({"message": "Student deleted successfully"}), 200
+
+    
+
