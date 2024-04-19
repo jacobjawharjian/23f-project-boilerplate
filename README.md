@@ -17,7 +17,7 @@ This repo contains a boilerplate setup for spinning up 3 Docker containers:
 1. Build the images with `docker compose build`
 1. Start the containers with `docker compose up`. To run in detached mode, run `docker compose up -d`.
 
-# Names: George Rackey, Jacob Jawharjian, Daniyal Kahlid, Rishi Agrawal, Stepan Kapreliana
+# Names: George Rackey, Jacob Jawharjian, Daniyal Khalid, Rishi Agrawal, Stepan Kapreliana
 
 The Swiper app is platform for Northeastern students to more easily access any and all information that
 they could possibly need regaurding their dining needs. The platform provides all sorts of data from dining hall capacity,
