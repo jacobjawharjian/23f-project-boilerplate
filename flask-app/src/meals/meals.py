@@ -40,20 +40,17 @@ def get_meal(mealID):
 
 
 @meals.route('/meals', methods=['POST'])
-def add_meal():
+def add_meal(id, mealName, description, servedAt):
     the_data = request.json
     mealName = the_data.get('MealName')
     description = the_data.get('Description')
     servedAt = the_data.get('ServedAt')
 
-    if not mealName or not description:
-        return jsonify({"error": "Missing required data: MealName or Description"}), 400
-
     query = '''
-    INSERT INTO Meals (MealName, Description, ServedAt)
-    VALUES (%s, %s, %s)
+    INSERT INTO Meals (mealName, description, servedAt)
+    VALUES (%s, %s, %s, %s)
     '''
-    params = (mealName, description, servedAt)
+    params = (id, mealName, description, servedAt)
 
     cursor = db.get_db().cursor()
     cursor.execute(query, params)

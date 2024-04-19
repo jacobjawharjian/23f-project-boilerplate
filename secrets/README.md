@@ -1,10 +1,15 @@
-# Password secrets for MySQL
+# Names: George Rackey, Jacob Jawharjian, Daniyal Kahlid, Rishi Agrawal, Stepan Kapreliana
 
-You should never store passwords in a file that will be pushed to github or any other cloud-hosted system.  You'll notice that in the .gitignore, two files from this folder are indeed ignored.  
+The Swiper app is platform for Northeastern students to more easily access any and all information that 
+they could possibly need regaurding their dining needs. The platform provides all sorts of data from dining hall capacity, 
+to specific meal calories, and even historical data of how you used your meal swipes! All of this and more is even possible.
 
-In this folder, you'll need to create two files:
 
-- `db_password.txt`
-  - in this file, put a password that will be used for a non-root db user
+# Password secrets for Swiper
+
+`db_password.txt` : 
+abc
+
 - `db_root_password.txt`
-  - in this file, put the password you want to use for the root user (superuser) of mysql. 
+123
+
