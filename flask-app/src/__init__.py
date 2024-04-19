@@ -38,6 +38,7 @@ def create_app():
     from src.students.students  import students
     from src.meals.meals  import meals
     from src.Vendor.Vendor  import Vendor
+    from src.Allergens.Allergens import Allergens
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
@@ -46,6 +47,7 @@ def create_app():
     app.register_blueprint(students,    url_prefix='/s')
     app.register_blueprint(meals,    url_prefix='/m')
     app.register_blueprint(Vendor,    url_prefix='/V')
+    app.register_blueprint(Allergens,    url_prefix='/A')
 
     # Don't forget to return the app object
     return app
