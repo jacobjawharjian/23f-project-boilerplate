@@ -71,26 +71,28 @@ def add_DietaryRestriction():
    return jsonify({"message": "Allergen added successfully"}), 201
 
 
-# Update Allergen information
-@Allergens.route('/Allergens/<int:AllergenID>', methods=['PUT'])
-def update_Allergen(AllergenID):
-   the_data = request.json
-   AllergenType = the_data.get('AllergenType')
+# Update allergens info from AllergenID
+@DietaryRestrictions.route('/DietaryRestrictions', methods=['PUT'])
+def update_DietaryRestrictions(): 
+    the_data = request.json
 
-   query = '''
-   UPDATE Allergens
-   SET AllergenType = %s
-   WHERE AllergenID = %s
-   '''
-   params = (AllergenType, AllergenID)
-
-
-   cursor = db.get_db().cursor()
-   cursor.execute(query, params)
-   db.get_db().commit()
-
-
-   return jsonify({"message": "Allergen updated successfully"}), 200
+    MealID = the_data.get('MealID')
+    none = the_data.get('none')
+    Halal = the_data.get('Halal')
+    Kosher = the_data.get('Kosher')
+    Vegan = the_data.get('Vegan')
+    GlutenFree = the_data.get('GlutenFree')
+    
+    
+    if MealID is None: 
+        return jsonify({'error': 'Missing customer ID'}), 400
+    
+    query = "UPDATE DietaryRestrictions SET  none = %s, Halal = %s, Kosher = %s, Vegan = %s, GlutenFree = %s, WHERE MealID = %s"
+        
+    data = (none, Halal, Kosher, Vegan, GlutenFree, MealID)
+    cursor = db.get_db().cursor()
+    cursor.execute(query, data)
+    db.get_db().commit()
 
 
 # Delete an Allergen
