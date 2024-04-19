@@ -37,7 +37,7 @@ def get_Vendor(VendorID):
 
 # Update VendorName for Vendor with particular VendorID
 @Vendor.route('/Vendor/<VendorID>', methods=['PUT'])
-def get_Vendor(VendorID, Name):
+def put_Vendor(VendorID, Name):
     cursor = db.get_db().cursor()
 
     query = """
@@ -62,7 +62,7 @@ def get_Vendor(VendorID, Name):
 
 # Update VendorAddress for Vendor with particular VendorID
 @Vendor.route('/Vendor/<VendorID>', methods=['PUT'])
-def get_Vendor(VendorID, Address):
+def put_Vendor(VendorID, Address):
     cursor = db.get_db().cursor()
 
     query = """

@@ -39,11 +39,11 @@ def get_DietaryRestriction(ConstraintID):
        the_response = make_response(jsonify({"error": "Dietary Restriction not found"}), 404)
    return the_response
 
+# Update allergens info from AllergenID
+@DietaryRestrictions.route('/DietaryRestrictions', methods=['PUT'])
+def update_DietaryRestrictions(): 
+    the_data = request.json
 
-# Add new DietaryRestriction
-@DietaryRestrictions.route('/DietaryRestrictions', methods=['POST'])
-def add_DietaryRestriction():
-   the_data = request.json
     MealID = the_data.get('MealID')
     none = the_data.get('none')
     Halal = the_data.get('Halal')
