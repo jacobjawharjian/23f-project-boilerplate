@@ -1,3 +1,4 @@
+CREATE DATABASE swiper;
 USE swiper;
 
 -- Create table for Students

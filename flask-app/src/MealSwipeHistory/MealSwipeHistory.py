@@ -3,10 +3,10 @@ import json
 from src import db
 
 
-mealSwipeHistory = Blueprint('MealSwipeHistory', __name__)
+MealSwipeHistory = Blueprint('MealSwipeHistory', __name__)
 
 # Get all MealSwipeHistory from the DB
-@mealSwipeHistory.route('/MealSwipeHistory', methods=['GET'])
+@MealSwipeHistory.route('/MealSwipeHistory', methods=['GET'])
 def get_mealSwipeHistory():
     cursor = db.get_db().cursor()
     cursor.execute('select SwipeID, SwipeStudent,\
@@ -22,7 +22,7 @@ def get_mealSwipeHistory():
     return the_response
 
 # Get MealSwipe detail for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['GET'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['GET'])
 def get_mealSwipeHistory(SwipeID):
     cursor = db.get_db().cursor()
     cursor.execute('select * from MealSwipeHistory where SwipeId = {0}'.format(SwipeID))
@@ -39,7 +39,7 @@ def get_mealSwipeHistory(SwipeID):
 
 
 # Updates MealSwipe Student for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
 def put_mealSwipeHistory(SwipeID, Student):
     cursor = db.get_db().cursor()
 
@@ -64,7 +64,7 @@ def put_mealSwipeHistory(SwipeID, Student):
 
 
 # Updates MealSwipe Time for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
 def put_mealSwipeHistory(SwipeID, NewTime):
     cursor = db.get_db().cursor()
 
@@ -88,7 +88,7 @@ def put_mealSwipeHistory(SwipeID, NewTime):
     return the_response
 
 # Updates MealSwipe HallID for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
 def put_mealSwipeHistory(SwipeID, HallID):
     cursor = db.get_db().cursor()
 
@@ -112,7 +112,7 @@ def put_mealSwipeHistory(SwipeID, HallID):
     return the_response
 
 # Updates MealSwipe Date for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['PUT'])
 def put_mealSwipeHistory(SwipeID, Date):
     cursor = db.get_db().cursor()
 
@@ -136,7 +136,7 @@ def put_mealSwipeHistory(SwipeID, Date):
     return the_response
 
 # Insert a new MealSwipe into the database
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['POST'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['POST'])
 def post_mealSwipeHistory(SwipeID, HallName, OpenClosed, CurrentCapacity, MaxCapacity):
     cursor = db.get_db().cursor()
 
@@ -162,7 +162,7 @@ def post_mealSwipeHistory(SwipeID, HallName, OpenClosed, CurrentCapacity, MaxCap
 
 
 # Delete MealSwipe detail for MealSwipe with particular SwipeId
-@mealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['DELETE'])
+@MealSwipeHistory.route('/MealSwipeHistory/<SwipeID>', methods=['DELETE'])
 def delete_mealSwipeHistory(SwipeID):
     cursor = db.get_db().cursor()
 
