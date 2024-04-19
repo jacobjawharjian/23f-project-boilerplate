@@ -19,7 +19,7 @@ def create_app():
     app.config['MYSQL_DATABASE_PASSWORD'] = open('/secrets/db_root_password.txt').readline().strip()
     app.config['MYSQL_DATABASE_HOST'] = 'db'
     app.config['MYSQL_DATABASE_PORT'] = 3306
-    app.config['MYSQL_DATABASE_DB'] = 'northwind'  # Change this to your DB name
+    app.config['MYSQL_DATABASE_DB'] = 'swiper'  # Change this to your DB name
 
     # Initialize the database object with the settings above. 
     db.init_app(app)
@@ -33,8 +33,7 @@ def create_app():
         return "<h1>Welcome to the 3200 boilerplate app</h1>"
 
     # Import the various Beluprint Objects
-    from src.customers.customers import customers
-    from src.products.products  import products
+
     from src.students.students  import students
     from src.meals.meals  import meals
     from src.Vendor.Vendor  import Vendor
@@ -42,8 +41,7 @@ def create_app():
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
-    app.register_blueprint(customers,   url_prefix='/c')
-    app.register_blueprint(products,    url_prefix='/p')
+
     app.register_blueprint(students,    url_prefix='/s')
     app.register_blueprint(meals,    url_prefix='/m')
     app.register_blueprint(Vendor,    url_prefix='/V')
