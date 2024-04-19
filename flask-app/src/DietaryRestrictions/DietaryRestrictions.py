@@ -69,38 +69,37 @@ def add_DietaryRestriction():
 
 
    return jsonify({"message": "Allergen added successfully"}), 201
-
-
-# Update allergens info from AllergenID
-@DietaryRestrictions.route('/DietaryRestrictions', methods=['PUT'])
-def update_DietaryRestrictions(): 
-    the_data = request.json
-
-    MealID = the_data.get('MealID')
-    none = the_data.get('none')
-    Halal = the_data.get('Halal')
-    Kosher = the_data.get('Kosher')
-    Vegan = the_data.get('Vegan')
-    GlutenFree = the_data.get('GlutenFree')
-    
-    
-    if MealID is None: 
-        return jsonify({'error': 'Missing customer ID'}), 400
-    
-    query = "UPDATE DietaryRestrictions SET  none = %s, Halal = %s, Kosher = %s, Vegan = %s, GlutenFree = %s, WHERE MealID = %s"
-        
-    data = (none, Halal, Kosher, Vegan, GlutenFree, MealID)
+   
+# Update MealID for Dietary Restriction with particular ConstraintID
+@DietaryRestrictions.route('/DietaryRestrictions/<ConstraintID>', methods=['PUT'])
+def get_DietaryRestriction(ConstraintID, Meal):
     cursor = db.get_db().cursor()
-    cursor.execute(query, data)
-    db.get_db().commit()
 
+    query = """
+    UPDATE DietaryRestrictions
+    SET MealID = Meal
+    WHERE ConstraintID = CID
+"""
+
+    params = (ConstraintID, Meal)
+
+    cursor.execute( query, params)
+    row_headers = [x[0] for x in cursor.description]
+    json_data = []
+    theData = cursor.fetchall()
+    for row in theData:
+        json_data.append(dict(zip(row_headers, row)))
+    the_response = make_response(jsonify(json_data))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
 
 # Delete an Allergen
-@Allergens.route('/Allergens/<int:AllergenID>', methods=['DELETE'])
-def delete_Allergen(AllergenID):
+@DietaryRestrictions.route('/DietaryRestrictions/<int:ConstraintID>', methods=['DELETE'])
+def delete_DietaryRestriction(ConstraintID):
    cursor = db.get_db().cursor()
-   cursor.execute('DELETE FROM Allergens WHERE AllergenID = %s', (AllergenID,))
+   cursor.execute('DELETE FROM DietaryRestrictions WHERE ConstraintID = %s', (ConstraintID,))
    db.get_db().commit()
 
 
-   return jsonify({"message": "Allergen deleted successfully"}), 200
+   return jsonify({"message": "Dietary Restriction deleted successfully"}), 200
